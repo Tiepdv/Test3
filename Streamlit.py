@@ -11,7 +11,7 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 client = bigquery.Client(credentials=credentials)
 
-query="SELECT AdvertisingSystem, PubAccId FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson` LIMIT 10"
+query="SELECT AdvertisingSystem, PubAccId FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson` LIMIT 10000"
 query_job = client.query(query)
 
 df=client.query(query).to_dataframe()
