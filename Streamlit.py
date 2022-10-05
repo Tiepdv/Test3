@@ -5,6 +5,8 @@ import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
+st. set_page_config(layout="wide")
+
 col1, col2,col3 = st.columns(3)
 
 with col1:
