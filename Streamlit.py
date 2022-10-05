@@ -2,7 +2,7 @@
 
 import streamlit as st
 # import os
-from google.cloud.bigquery.client import Client
+#from google.cloud.bigquery.client import Client
 from google.cloud import bigquery
 
 # Create API client.
