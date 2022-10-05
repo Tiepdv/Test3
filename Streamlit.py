@@ -6,7 +6,7 @@ from google.oauth2 import service_account
 from google.cloud import bigquery
 
 st.image("images.png", width=40)
-st.title("🔑 IAB dataset")
+st.title("📊 IAB dataset")
 	
 
 option = st.selectbox(
