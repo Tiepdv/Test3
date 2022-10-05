@@ -14,6 +14,18 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from google.cloud import bigquery
+client = bigquery.Client()
+
+sql = """
+    SELECT name, SUM(number) as count
+    FROM `bigquery-public-data.usa_names.usa_1910_current`
+    GROUP BY name
+    ORDER BY count DESC
+    LIMIT 10
+"""
+
+df = client.query(sql).to_dataframe()
 
 st.write("""# My first app 
 Hello *world!*""")
