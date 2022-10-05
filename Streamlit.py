@@ -10,17 +10,9 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 client = bigquery.Client(credentials=credentials)
 
-# Perform query.
-def run_query(query):
-    query_job = client.query(query)
-    rows_raw = query_job.result()
-    # Convert to list of dicts. Required for st.experimental_memo to hash the return value.
-    rows = [dict(row) for row in rows_raw]
-    return rows
+query="SELECT AdvertisingSystem, PubAccId FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson` LIMIT 10"
+query_job = client.query(query)
 
-rows = run_query("SELECT AdvertisingSystem, PubAccId FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson` LIMIT 10")
+df=client.query(query).to_dataframe()
 
-# Print results.
-st.write("Some wise words from Shakespeare:")
-for row in rows:
-    st.write("✍️ " + row['AdvertisingSystem'] + '-------------' +row['PubAccId'])
+st.table(df)
