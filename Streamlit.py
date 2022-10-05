@@ -5,11 +5,9 @@ import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
-st.image("images.png", width=400)
-st.title("🔑 BERT Keyword Extractor")
+st.image("images.png", width=40)
+st.title("🔑 IAB dataset")
 	
-st.write("""# IAB dataset
----------------""")
 
 option = st.selectbox(
     'Please choose the dataset',
