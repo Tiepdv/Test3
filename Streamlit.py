@@ -5,14 +5,15 @@ import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
-col1, col2 = st.columns(2)
+col1, col2,col3 = st.columns(2)
 
 with col1:
-   st.image("images.png", width=40)
+   st.image("images.png", width=80)
 
 with col2:
    st.title("📊 IAB dataset")
-	
+with col2:
+   st.write('')
 
 option = st.selectbox(
     'Please choose the dataset',
