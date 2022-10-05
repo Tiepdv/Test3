@@ -12,7 +12,7 @@ with col1:
 
 with col2:
    st.title("📊 IAB dataset")
-with col2:
+with col3:
    st.write('')
 
 option = st.selectbox(
