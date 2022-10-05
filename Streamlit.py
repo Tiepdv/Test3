@@ -3,7 +3,7 @@
 import streamlit as st
 # import os
 #from google.cloud.bigquery.client import Client
-from google.cloud import bigquery
+# from google.cloud import bigquery
 
 # Create API client.
 credentials = service_account.Credentials.from_service_account_info(
