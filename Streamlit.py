@@ -5,7 +5,7 @@ import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
-col1, col2,col3 = st.columns(2)
+col1, col2,col3 = st.columns(3)
 
 with col1:
    st.image("images.png", width=80)
