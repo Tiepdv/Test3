@@ -5,6 +5,9 @@ import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
+menu=["A", "B"]
+choice=st.sidebar.selectbox("Menu", menu)
+
 st. set_page_config(layout="wide")
 
 col1, col2,col3 = st.columns(3)
@@ -27,13 +30,14 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 client = bigquery.Client(credentials=credentials)
 
-if option=='WEB':
-	query="SELECT * FROM `showheroes-bi.bi.bi_adstxt_join_sellerjson_with_count_domains` limit 1000"
+if choice="A":
+	if option=='WEB':
+		query="SELECT * FROM `showheroes-bi.bi.bi_adstxt_join_sellerjson_with_count_domains` limit 1000"
 
-elif option=='APP':
-	query="SELECT * FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson_with_count_domains` limit 1000"
+	elif option=='APP':
+		query="SELECT * FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson_with_count_domains` limit 1000"
 
 
-query_job = client.query(query)
-df=client.query(query).to_dataframe()
-st.table(df)
+	query_job = client.query(query)
+	df=client.query(query).to_dataframe()
+	st.table(df)
