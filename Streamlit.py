@@ -30,7 +30,7 @@ credentials = service_account.Credentials.from_service_account_info(
 )
 client = bigquery.Client(credentials=credentials)
 
-if choice="A":
+if choice=="A":
 	if option=='WEB':
 		query="SELECT * FROM `showheroes-bi.bi.bi_adstxt_join_sellerjson_with_count_domains` limit 1000"
 
@@ -41,3 +41,5 @@ if choice="A":
 	query_job = client.query(query)
 	df=client.query(query).to_dataframe()
 	st.table(df)
+elif choice=="B":
+	st.write('Hello')
