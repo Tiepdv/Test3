@@ -39,4 +39,3 @@ elif choice=="APP":
 	df=client.query(query).to_dataframe()
 	st.dataframe(df)
 
-	st.write('Hello')
