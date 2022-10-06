@@ -5,8 +5,8 @@ import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
-menu=["A", "B"]
-choice=st.sidebar.selectbox("Menu", menu)
+menu=["WEB", "APP"]
+choice=st.sidebar.selectbox("Choose dataset", menu)
 
 # st. set_page_config(layout="wide")
 
@@ -20,9 +20,7 @@ with col2:
 with col3:
    st.write('')
 
-option = st.selectbox(
-    'Please choose the dataset',
-    ('WEB', 'APP'))
+# option = st.selectbox('Please choose the dataset',	('WEB', 'APP'))
 
 # Create API client.
 credentials = service_account.Credentials.from_service_account_info(
