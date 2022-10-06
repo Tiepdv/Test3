@@ -30,12 +30,12 @@ client = bigquery.Client(credentials=credentials)
 
 if choice=="WEB":
 	st. set_page_config(layout="wide")
-	query="SELECT * FROM `showheroes-bi.bi.bi_adstxt_join_sellerjson_with_count_domains` limit 1000"
+	query="SELECT * FROM `showheroes-bi.bi.bi_adstxt_join_sellerjson_with_count_domains` limit 10000"
 	query_job = client.query(query)
 	df=client.query(query).to_dataframe()
 	st.dataframe(df, width=None, height=10000)
 elif choice=="APP":
-	query="SELECT * FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson_with_count_domains` limit 1000"
+	query="SELECT * FROM `showheroes-bi.bi.bi_appadstxt_join_sellersjson_with_count_domains` limit 10000"
 	query_job = client.query(query)
 	df=client.query(query).to_dataframe()
 	st.dataframe(df,height=10000)
